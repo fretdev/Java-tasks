@@ -79,7 +79,7 @@ public class Main{
             average = total/5.0;
             System.out.println("Score Average: "+ average);
 
-            System.out.println("\n******STUDENT RESULTS*****");
+            System.out.println("\n******STUDENT RESULTS*******");
             for (int i = 0; i < 5; i++) {
                 System.out.println("Student "+(i + 1) +"  "+ scores[i] +"  " +grades[i]+"  " +descriptions[i]);
             }
