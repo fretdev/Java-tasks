@@ -38,25 +38,7 @@ public class Main{
                 }
 
                 scores[i] = score;
-                char grade;
-                if(score >= 80){
-                    grade = 'A';
-                }
-                else if(score >= 70){
-                    grade = 'B';
-                }
-                else if(score >= 60){
-                    grade = 'C';
-                }
-                else if(score >= 50){
-                    grade = 'D';
-                }
-                else if(score >= 40){
-                    grade = 'E';
-                }
-                else {
-                    grade = 'F';
-                }
+                char grade = getGrade(score);
 
                 grades[i] = grade;
                 String description;
@@ -94,6 +76,29 @@ public class Main{
 
         System.out.println("Goodbye");
         scanner.close();
+    }
+
+    private static char getGrade(int score) {
+        char grade;
+        if(score >= 80){
+            grade = 'A';
+        }
+        else if(score >= 70){
+            grade = 'B';
+        }
+        else if(score >= 60){
+            grade = 'C';
+        }
+        else if(score >= 50){
+            grade = 'D';
+        }
+        else if(score >= 40){
+            grade = 'E';
+        }
+        else {
+            grade = 'F';
+        }
+        return grade;
     }
 
     public static void printASCIIPattern() {
