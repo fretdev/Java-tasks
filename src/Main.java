@@ -3,22 +3,41 @@ import java.util.Scanner;
 public class Main{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
-        int total = 0;
-        int[] scores = new int[5];
-        double average;
-        String calculateGrade = "yes";
 
-        while (calculateGrade.equals("yes")){
+        boolean calculateGrade = true;
+
+        while (calculateGrade){
+            int total = 0;
+            int[] scores = new int[5];
+            char[] grades = new char[5];
+            String[] descriptions= new String[5];
+            double average;
+
             System.out.println("*****************");
             System.out.println("Grade Calculator");
             System.out.println("*****************");
 
             for(int i = 0;i<5;i++){
-                System.out.print("Enter score(0/100): ");
-                int score = scanner.nextInt();
-                scores[i] = score;
-                scanner.nextLine();
+                int score;
+                while(true){
+                    System.out.print("Enter score(0-100): ");
+                    if(scanner.hasNextInt()){
+                        score = scanner.nextInt();
+                        scanner.nextLine();
+                        if(score < 0 || score > 100){
+                            System.out.println("Score must be between 0 and 100!");
+                        }
+                        else{
+                            break;
+                        }
+                    }
+                    else{
+                        System.out.println("Invalid input! Please enter an integer.");
+                        scanner.nextLine();
+                    }
+                }
 
+                scores[i] = score;
                 char grade;
                 if(score >= 80){
                     grade = 'A';
@@ -39,15 +58,19 @@ public class Main{
                     grade = 'F';
                 }
 
+                grades[i] = grade;
+                String description;
                 switch (grade){
-                    case 'A' -> System.out.println("Excellent");
-                    case 'B' -> System.out.println("Very Good");
-                    case 'C' -> System.out.println("Good");
-                    case 'D' -> System.out.println("Pass");
-                    case 'E' -> System.out.println("Weak pass");
-                    case 'F' -> System.out.println("Fail");
-                    default -> System.out.println("Invalid input");
+                    case 'A' -> description = "Excellent";
+                    case 'B' -> description = "Very Good";
+                    case 'C' -> description = "Good";
+                    case 'D' -> description = "Pass";
+                    case 'E' -> description = "Weak pass";
+                    case 'F' -> description = "Fail";
+                    default -> description = "Invalid input";
                 }
+                descriptions[i] = description;
+                System.out.println("Grade: "+grade+" - "+description);
                 System.out.println("*****************");
             }
             for(int i =0;i < 5;i++){
@@ -56,14 +79,23 @@ public class Main{
             average = total/5.0;
             System.out.println("Score Average: "+ average);
 
+            System.out.println("\n******STUDENT RESULTS*****");
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Student "+(i + 1) +"  "+ scores[i] +"  " +grades[i]+"  " +descriptions[i]);
+            }
+
             printASCIIPattern();
-            System.out.print("Do you want to recalculate grade: ");
-            calculateGrade = scanner.nextLine();
+
+            System.out.println();
+            System.out.print("Do you want to recalculate grades(true/false): ");
+            calculateGrade = scanner.nextBoolean();
         }
 
 
+        System.out.println("Goodbye");
         scanner.close();
     }
+
     public static void printASCIIPattern() {
         System.out.println("   *   ");
         System.out.println("  ***  ");
