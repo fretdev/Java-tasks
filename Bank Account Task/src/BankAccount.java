@@ -23,6 +23,7 @@ public class BankAccount{
     public void deposit(double amount){
         validateAmount(amount);
         this.balance += amount;
+        System.out.println("Depositing.............");
         System.out.println("You deposited "+ amount);
     }
     public void withdraw(double amount){
@@ -31,6 +32,7 @@ public class BankAccount{
             throw new IllegalStateException("Insufficient Funds");
         }
         this.balance -= amount;
+        System.out.println("Withdrawing..........");
         System.out.println("You withdrew "+amount);
     }
     public void displayInfo(){
