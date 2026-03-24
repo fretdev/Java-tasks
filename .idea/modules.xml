@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Bank Account Task/Bank Account Task.iml" filepath="$PROJECT_DIR$/Bank Account Task/Bank Account Task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java task/Java task.iml" filepath="$PROJECT_DIR$/Java task/Java task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Miss Dammie Tasks.iml" filepath="$PROJECT_DIR$/.idea/Miss Dammie Tasks.iml" />
+    </modules>
+  </component>
+</project>
