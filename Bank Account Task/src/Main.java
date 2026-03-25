@@ -8,7 +8,7 @@ public class Main{
 //        BankAccount account1 = new BankAccount();
         BankAccount account2 = new BankAccount("Prosper","8133179030",5000);
 
-        BankAccount.getTotalAccounts();
+        System.out.println("Total accounts "+ BankAccount.getTotalAccounts());
         account2.displayInfo();
 
         System.out.println("Testing my class attributes");

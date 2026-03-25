@@ -44,8 +44,8 @@ public class BankAccount{
         System.out.println("*****************************");
     }
 
-    public static void getTotalAccounts(){
-        System.out.println("Total accounts "+totalAccounts);
+    public static int getTotalAccounts(){
+        return totalAccounts;
     }
     public String getAccountName(){
         return accountName;
